@@ -12,6 +12,15 @@
 }
 .grid-container-home{
     display: grid;
+    #gameTitle{
+        grid-area: gameTitle;
+    }
+    #playBtn{
+        grid-area: playBtn;
+    }
+    #homeFooter{
+        grid-area: homeFooter;
+    }
 }
 
 /*Mindkét weboldal stílusa itt van!!!!*/
@@ -106,22 +115,15 @@ body{
     #home{
         display: flex;
         align-items: center;
-
-        #gameTitle{
-            grid-area: gameTitle;
-        }
+        
+        grid-area: home;
         #information{
-            grid-area: information;
+            
             p{
                 text-align: center justify;
                 color: white;   
             }
-        }
-        #playBtn{
-            grid-area: playBtn;
-        }
-    
-        
+        }    
     }
 
 
@@ -272,7 +274,7 @@ body{
         grid-template-rows: 2fr 2fr 2fr 2fr;
         grid-template-areas: 
         "gameTitle"
-        "information"
+        "home"
         "playBtn"
         "homeFooter";
     }
@@ -292,7 +294,7 @@ body{
         grid-template-rows: 2fr 2fr 2fr 2fr;
         grid-template-areas: 
         "gameTitle"
-        "information"
+        "home"
         "playBtn"
         "homeFooter";
     }
@@ -312,7 +314,7 @@ body{
         grid-template-rows: 2fr 2fr 2fr 2fr;
         grid-template-areas: 
         "gameTitle"
-        "information"
+        "home"
         "playBtn"
         "homeFooter";
     }
