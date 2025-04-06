@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This website is a mini-game wich goal is to guess a number wich created automaiticly">
+        <meta name="keywords" content="game mini-game GuessTheNumber fun play">
+        <meta name="author" content="Sanhilzon inc.">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <title>Guess The Number</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="betoltes()">
+        <div class="grid-container">
+            <header>
+                <a href="index.html" class="neon-btn" id="backToHome"><-</a>
+                <select name="mode" id="mode" class="neon-btn">
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <a class="neon-btn" id="informationTab">i</a>
+            </header>
+            <h1>Guess The Number</h1>
+            <div id="main">
+                <form action="" id="guesser">
+                    <input type="number" name="userNumber" id="userNumber" min="1" max="100" placeholder="X">
+                    <br>
+                    <input type="button" value="Guess" onclick="guessTheNumber()" class="neon-btn" id="guessBtn">
+                </form>
+            </div>
+            <div id="display">
+                <p id="eredmenyJelzo"></p>
+                <br>
+                <p id="hardModeProbalkozas"></p>
+            </div>
+            
+            <footer>
+                <div class="footer-col1">
+                    <h4>About us</h4>
+                    <ul>
+                        <li><a href="#szolgaltatas">Services</a></li>
+                        <li><a href="#csapatunk">Our team</a></li>
+                        <li><a href="#kontakt">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col2">
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col3">
+                    <h4>Corporation</h4>
+                    <ul>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col4">
+                    <h4>Follow us on soicial media</h4>
+                        <a href="#"><i class="bi bi-discord"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
+            </footer>
+        </div>
+        <script src="basic.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    </body>
+</html>
