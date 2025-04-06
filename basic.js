@@ -5,7 +5,7 @@ function betoltes(){
 }
 
 var probalkozas = 0
-var osszprobalkozas = 4
+var osszprobalkozas = 5
 function guessTheNumber() {
     var button = document.getElementById('guessBtn');
     
@@ -16,6 +16,9 @@ function guessTheNumber() {
 
     var mode = document.getElementById('mode').value;
     
+    if(mode == "hard" && ((userNumber < randomNumber) || (userNumber > randomNumber))){
+        osszprobalkozas--;
+    }
 
     if(userNumber == randomNumber){
             alert(`Nyert!!\n${probalkozas + 1} próbálozás`);
@@ -37,11 +40,6 @@ function guessTheNumber() {
         }
     }
     
-
-
-    if(mode == "hard" && ((userNumber < randomNumber) || (userNumber > randomNumber))){
-        osszprobalkozas--;
-    }
 
     if(mode == "hard" && osszprobalkozas === 0){
         display.innerHTML = `No more quess!`;
