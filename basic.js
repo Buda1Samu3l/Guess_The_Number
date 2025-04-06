@@ -12,7 +12,6 @@ function guessTheNumber() {
     var userNumber = document.getElementById('userNumber').value;
 
     var display = document.getElementById('eredmenyJelzo');
-    var hardMode = document.getElementById('hardModeProbalkozas');
     var displayer = document.getElementById('display');
 
     var mode = document.getElementById('mode').value;
@@ -24,28 +23,28 @@ function guessTheNumber() {
 
             /*Nyertes animámció*/
 
-    }else if(userNumber > randomNumber){
-            display.innerHTML = `X < ${userNumber}` + "\n" ;
-            probalkozas++;
-            if(mode == 'hard'){
-                display.innerHTML += `\tYou can try ${osszprobalkozas} more time`;
-            }
-    }else if(userNumber < randomNumber){
-            display.innerHTML = `X > ${userNumber}`  +  "\n";
-            probalkozas++ 
-            if(mode == 'hard'){
-                display.innerHTML += `\tYou can try ${osszprobalkozas} more time`;
-            }
+    } else if (userNumber > randomNumber) {
+        display.innerHTML = `X < ${userNumber}<br>`;
+        probalkozas++;
+        if (mode == 'hard') {
+            display.innerHTML += `You can try ${osszprobalkozas} more time`;
+        }
+    } else if (userNumber < randomNumber) {
+        display.innerHTML = `X > ${userNumber}<br>`;
+        probalkozas++;
+        if (mode == 'hard') {
+            display.innerHTML += `You can try ${osszprobalkozas} more time`;
+        }
     }
+    
 
 
     if(mode == "hard" && ((userNumber < randomNumber) || (userNumber > randomNumber))){
         osszprobalkozas--;
     }
 
-    if(mode == "hard" && osszprobalkozas == 0){
+    if(mode == "hard" && osszprobalkozas === 0){
         display.innerHTML = `No more quess!`;
-        hardMode.innerHTML = ``
         button.setAttribute('value','RESTART');
         button.setAttribute('onclick','refresh()');
     }
