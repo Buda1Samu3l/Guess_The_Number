@@ -13,6 +13,32 @@
 
 .grid-container-home {
   display: grid;
+  width: 100vw;
+  /*A index stílusa*/
+}
+.grid-container-home #home {
+  grid-area: home;
+}
+.grid-container-home #home #information p {
+  text-align: center justify;
+  color: white;
+  font-size: 150%;
+}
+.grid-container-home #gameTitle {
+  grid-area: gameTitle;
+  width: 100vw;
+  height: -moz-min-content;
+  height: min-content;
+}
+.grid-container-home #playBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: playBtn;
+  margin-bottom: 10px;
+}
+.grid-container-home #homeFooter {
+  grid-area: homeFooter;
 }
 
 /*Mindkét weboldal stílusa itt van!!!!*/
@@ -27,7 +53,6 @@ body {
   animation: moveBackground 15s linear infinite;
   /*A játék oldalona fő rész*/
   /*Az eredmény kijelzésére használt szekció(itt div)*/
-  /*A index stílusa*/
   /*A footer mindkét oldalon ugyan az!!*/
 }
 body header {
@@ -91,26 +116,9 @@ body #display {
   font-size: 250%;
   font-family: "Nordic";
 }
-body #home {
-  display: flex;
-  align-items: center;
-}
-body #home #gameTitle {
-  grid-area: gameTitle;
-}
-body #home #information {
-  grid-area: information;
-}
-body #home #information p {
-  text-align: center justify;
-  color: white;
-}
-body #home #playBtn {
-  grid-area: playBtn;
-}
 body footer {
   display: grid;
-  background-color: rgba(26, 26, 26, 0.9);
+  background-color: rgba(26, 26, 26, 0.65);
   margin-bottom: 0px;
   padding: 10px;
   font-size: 125%;
@@ -205,9 +213,9 @@ body footer i:hover {
 /*media - index.html*/
 @media screen and (max-width: 768px) and (orientation: portrait) {
   .grid-container-home {
-    grid-template-columns: 1.5fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 2fr 2fr 2fr 2fr;
-    grid-template-areas: "gameTitle" "information" "playBtn" "homeFooter";
+    grid-template-areas: "gameTitle" "home" "playBtn" "homeFooter";
   }
   footer {
     grid-template-columns: 1fr 1fr;
@@ -217,9 +225,9 @@ body footer i:hover {
 }
 @media screen and (min-width: 769px) {
   .grid-container-home {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 2fr 2fr 2fr 2fr;
-    grid-template-areas: "gameTitle" "information" "playBtn" "homeFooter";
+    grid-template-areas: "gameTitle gameTitle gameTitle gameTitle" "home home home home" "playBtn playBtn playBtn playBtn" "homeFooter homeFooter homeFooter homeFooter";
   }
   footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -229,9 +237,9 @@ body footer i:hover {
 }
 @media screen and (min-width: 1025px) {
   .grid-container-home {
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr 2fr 2fr 2fr;
-    grid-template-areas: "gameTitle" "information" "playBtn" "homeFooter";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 0.5fr 0.25fr 1fr;
+    grid-template-areas: "gameTitle gameTitle gameTitle gameTitle" "home home home home" "playBtn playBtn playBtn playBtn" "footer footer footer footer";
   }
   footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;

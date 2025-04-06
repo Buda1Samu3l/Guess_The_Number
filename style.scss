@@ -12,11 +12,30 @@
 }
 .grid-container-home{
     display: grid;
+
+    width: 100vw;
+        /*A index stílusa*/
+    #home{
+        grid-area: home;
+        #information{
+            p{
+                text-align: center justify;
+                color: white; 
+                font-size: 150%;
+            }
+        }    
+    }
     #gameTitle{
         grid-area: gameTitle;
+        width: 100vw;
+        height: min-content;
     }
     #playBtn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         grid-area: playBtn;
+        margin-bottom: 10px;
     }
     #homeFooter{
         grid-area: homeFooter;
@@ -111,33 +130,16 @@ body{
         font-family: 'Nordic';
     }
 
-    /*A index stílusa*/
-    #home{
-        display: flex;
-        align-items: center;
-        
-        grid-area: home;
-        #information{
-            
-            p{
-                text-align: center justify;
-                color: white;   
-            }
-        }    
-    }
-
-
-
-
    /*A footer mindkét oldalon ugyan az!!*/
     footer{
         display: grid;
 
-        background-color: rgba($color: #1a1a1a, $alpha: 0.9);
+        background-color: rgba($color: #1a1a1a, $alpha: 0.65);
         margin-bottom: 0px;
         padding: 10px;
 
         font-size: 125%;
+        
         h4{
             color: var(--clr-neon);
             font-family: 'Nordic';
@@ -270,7 +272,7 @@ body{
 /*media - index.html*/
 @media screen and (max-width: 768px) and (orientation: portrait){
     .grid-container-home{
-        grid-template-columns:1.5fr;
+        grid-template-columns:1fr;
         grid-template-rows: 2fr 2fr 2fr 2fr;
         grid-template-areas: 
         "gameTitle"
@@ -290,13 +292,13 @@ body{
 
 @media screen and (min-width: 769px){
     .grid-container-home{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 2fr 2fr 2fr 2fr;
         grid-template-areas: 
-        "gameTitle"
-        "home"
-        "playBtn"
-        "homeFooter";
+        "gameTitle gameTitle gameTitle gameTitle"
+        "home home home home"
+        "playBtn playBtn playBtn playBtn"
+        "homeFooter homeFooter homeFooter homeFooter";
     }
 
     footer{
@@ -310,13 +312,13 @@ body{
 
 @media screen and (min-width: 1025px){
     .grid-container-home{
-        grid-template-columns: 1fr;
-        grid-template-rows: 2fr 2fr 2fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.25fr 0.5fr 0.25fr 1fr;
         grid-template-areas: 
-        "gameTitle"
-        "home"
-        "playBtn"
-        "homeFooter";
+        "gameTitle gameTitle gameTitle gameTitle"
+        "home home home home"
+        "playBtn playBtn playBtn playBtn"
+        "footer footer footer footer";
     }
 
     footer{
