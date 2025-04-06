@@ -5,7 +5,7 @@ function betoltes(){
 }
 
 var probalkozas = 0
-var osszprobalkozas = 5
+var osszprobalkozas = 4
 function guessTheNumber() {
     var button = document.getElementById('guessBtn');
     
@@ -28,13 +28,13 @@ function guessTheNumber() {
             display.innerHTML = `X < ${userNumber}` + "\n" ;
             probalkozas++;
             if(mode == 'hard'){
-                hardMode.innerHTML = `You can try ${osszprobalkozas} more time`;
+                display.innerHTML += `\tYou can try ${osszprobalkozas} more time`;
             }
     }else if(userNumber < randomNumber){
             display.innerHTML = `X > ${userNumber}`  +  "\n";
             probalkozas++ 
             if(mode == 'hard'){
-                hardMode.innerHTML = `You can try ${osszprobalkozas} more time`;
+                display.innerHTML += `\tYou can try ${osszprobalkozas} more time`;
             }
     }
 
