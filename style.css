@@ -5,14 +5,17 @@
 }
 :root {
   --clr-neon: hsl(94, 98%, 51%);
+  transition: all 0.3s ease-in-out;
 }
 
 .grid-container {
   display: grid;
+  height: 100vh;
 }
 
 .grid-container-home {
   display: grid;
+  height: 100vh;
   width: 100vw;
   /*A index stílusa*/
 }
@@ -48,7 +51,6 @@ body {
   background-image: url(img/background.png);
   background-blend-mode: overlay;
   background-repeat: repeat;
-  height: 100vh;
   background-position: 0 0;
   animation: moveBackground 15s linear infinite;
   /*A játék oldalona fő rész*/
@@ -105,7 +107,7 @@ body #main #guesser #userNumber::placeholder {
   font-family: "Nordic";
 }
 body #main #guesser .neon-btn {
-  margin-left: 31%;
+  margin-left: 26.5%;
   margin-right: 30%;
 }
 body #display {
@@ -135,11 +137,33 @@ body footer a {
 body footer a i {
   color: white;
   margin-right: 20px;
-  margin-top: 60px;
+  position: relative;
+  top: 8px;
+  transition: top 0.3s ease, color 0.3s ease;
 }
-body footer i:hover {
-  transform: translateY(-20px);
-  color: var(--clr-neon);
+body footer a i:hover {
+  top: 0;
+}
+body footer #discord:hover {
+  color: rgb(114, 137, 218);
+}
+body footer #insta:hover {
+  color: rgb(247, 119, 55);
+}
+body footer #github:hover {
+  color: rgb(51, 51, 51);
+}
+body footer #youtube:hover {
+  color: red;
+}
+body footer img {
+  float: center;
+  width: 200px;
+  height: 150px;
+  margin-left: 45px;
+}
+body #information {
+  padding: 15px;
 }
 
 /*A gombok stílusa*/
@@ -155,6 +179,7 @@ body footer i:hover {
   font-size: 1.5rem;
   font-family: "Nordic";
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .neon-btn:hover {
@@ -201,7 +226,7 @@ body footer i:hover {
 @media screen and (min-width: 1025px) {
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
     grid-template-areas: "header header header" "mainTitle mainTitle mainTitle" "guesser guesser guesser" "display display display" "footer footer footer";
   }
   footer {
@@ -215,7 +240,7 @@ body footer i:hover {
   .grid-container-home {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 2fr 2fr 2fr;
-    grid-template-areas: "gameTitle" "home" "playBtn" "homeFooter";
+    grid-template-areas: "gameTitle" "home" "playBtn" "footer";
   }
   footer {
     grid-template-columns: 1fr 1fr;
@@ -227,7 +252,7 @@ body footer i:hover {
   .grid-container-home {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 2fr 2fr 2fr 2fr;
-    grid-template-areas: "gameTitle gameTitle gameTitle gameTitle" "home home home home" "playBtn playBtn playBtn playBtn" "homeFooter homeFooter homeFooter homeFooter";
+    grid-template-areas: "gameTitle gameTitle gameTitle gameTitle" "home home home home" "playBtn playBtn playBtn playBtn" "footer footer footer footer";
   }
   footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -238,7 +263,7 @@ body footer i:hover {
 @media screen and (min-width: 1025px) {
   .grid-container-home {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.25fr 0.5fr 0.25fr 1fr;
+    grid-template-rows: 0.25fr 0.5fr 0.25fr 0.33fr;
     grid-template-areas: "gameTitle gameTitle gameTitle gameTitle" "home home home home" "playBtn playBtn playBtn playBtn" "footer footer footer footer";
   }
   footer {

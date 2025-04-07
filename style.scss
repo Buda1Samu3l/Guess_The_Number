@@ -5,13 +5,16 @@
 
 :root{
     --clr-neon: hsl(94, 98%, 51%);
+    transition: all 0.3s ease-in-out;
 }
 
 .grid-container{
     display: grid;
+    height: 100vh;
 }
 .grid-container-home{
     display: grid;
+    height: 100vh;
 
     width: 100vw;
         /*A index stílusa*/
@@ -49,8 +52,6 @@ body{
     background-image: url(img/background.png);
     background-blend-mode: overlay;
     background-repeat:repeat;
-
-    height: 100vh;
 
     background-position: 0 0;
     animation: moveBackground 15s linear infinite;
@@ -108,15 +109,18 @@ body{
             #userNumber::placeholder{
                 font-family: 'Nordic';
             }
-        
+            
             .neon-btn{
                 //margin-top: 15px;
-                margin-left: 31%;
+                margin-left: 26.5%;
                 margin-right: 30%;
         
             }
+                
         }
     }
+
+
     /*Az eredmény kijelzésére használt szekció(itt div)*/
     #display{
         display: flex;
@@ -145,23 +149,51 @@ body{
             font-family: 'Nordic';
         }
 
-        a{
+        a {
             text-decoration: none;
             color: white;
-            
-            i{
-                color: white;
-                margin-right: 20px;
-                margin-top: 60px;
+          
+            i {
+              color: white;
+              margin-right: 20px;
+              position: relative; 
+              top: 8px; 
+              transition: top 0.3s ease, color 0.3s ease;
+          
+             
+              &:hover {
+                top: 0; 
+              }
             }
         }
-        i:hover{
-            transform: translateY(-20px);
-            color: var(--clr-neon);
+          
+        #discord:hover {
+         color: rgb(114, 137, 218);
+        }
+        #insta:hover {
+        color: rgb(247, 119, 55);
+        }
+        #github:hover {
+            color: rgb(51, 51, 51);
+        }
+        #youtube:hover {
+            color: red;
+        }
+          
+
+        img{
+            float: center;
+            width: 200px;
+            height: 150px;
+            margin-left: 45px;
         }
 
 
         grid-area: footer;
+    }
+
+    #information{
+        padding: 15px;
     }
 
 }
@@ -184,6 +216,7 @@ body{
     font-family: 'Nordic';
 
     margin-top: 15px;
+    margin-bottom: 15px;
 
 
 }.neon-btn:hover{
@@ -251,7 +284,7 @@ body{
 @media screen and (min-width: 1025px){
     .grid-container{
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
         grid-template-areas: 
         "header header header"
         "mainTitle mainTitle mainTitle"
@@ -278,7 +311,7 @@ body{
         "gameTitle"
         "home"
         "playBtn"
-        "homeFooter";
+        "footer";
     }
 
     footer{
@@ -298,7 +331,7 @@ body{
         "gameTitle gameTitle gameTitle gameTitle"
         "home home home home"
         "playBtn playBtn playBtn playBtn"
-        "homeFooter homeFooter homeFooter homeFooter";
+        "footer footer footer footer";
     }
 
     footer{
@@ -313,7 +346,7 @@ body{
 @media screen and (min-width: 1025px){
     .grid-container-home{
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.25fr 0.5fr 0.25fr 1fr;
+        grid-template-rows: 0.25fr 0.5fr 0.25fr 0.33fr;
         grid-template-areas: 
         "gameTitle gameTitle gameTitle gameTitle"
         "home home home home"

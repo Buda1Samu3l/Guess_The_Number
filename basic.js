@@ -22,19 +22,25 @@ function guessTheNumber() {
 
     if(userNumber == randomNumber){
             alert(`Nyert!!\n${probalkozas + 1} próbálozás`);
-            refresh();
+            document.documentElement.style.setProperty('--clr-neon', ' hsl(94, 98%, 51%)'); // red
 
-            /*Nyertes animámció*/
+            refresh();
 
     } else if (userNumber > randomNumber) {
         display.innerHTML = `X < ${userNumber}<br>`;
         probalkozas++;
+
+        badTryColor();
+
         if (mode == 'hard') {
             display.innerHTML += `You can try ${osszprobalkozas} more time`;
         }
     } else if (userNumber < randomNumber) {
         display.innerHTML = `X > ${userNumber}<br>`;
         probalkozas++;
+
+        badTryColor();
+
         if (mode == 'hard') {
             display.innerHTML += `You can try ${osszprobalkozas} more time`;
         }
@@ -62,3 +68,14 @@ console.log(userNumber)
 function refresh(){
     window.location.reload();
 }
+
+function badTryColor(tempColor = 'hsl(0, 100%, 50%)', duration = 1000, thenColor = 'hsl(94, 98%, 51%)') {
+    document.documentElement.style.setProperty('--clr-neon', tempColor);
+    setTimeout(() => {
+        document.documentElement.style.setProperty('--clr-neon', thenColor);
+    }, duration);
+}
+
+
+
+
